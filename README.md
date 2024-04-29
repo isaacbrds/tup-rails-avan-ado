@@ -1,25 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# tup-rails-avançado
+- Repositório criado para guardar e documentar o progresso no curso promovido pelo Torne-se um Programador
 
-Things you may want to cover:
+<h3> 👨‍💼 &nbsp;Sobre o repositório </h3>
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+- Ruby on Rails
 
-* Database creation
+<h3> :rocket: &nbsp;Tecnologias utilizadas </h3>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+<div style="display: inline_block"><br>
+ 
+  <img align="center" alt="isaac-Ruby" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/ruby/ruby-original.svg">
 * ...
 # tup-rails-avan-ado
