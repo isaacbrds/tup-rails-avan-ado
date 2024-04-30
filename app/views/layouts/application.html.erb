@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LayoutRails</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+		<title>Desafio 21 dias Rails Avançado</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+		<%= javascript_importmap_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+     	<!-- Wrapper -->
+        <div id="wrapper">
+          <%= yield %>
+        </div>
+	</div>
+
+	<!-- Copyright -->
+	<div class="copyright" style="color: #000;min-width: 500px;padding: 30px;">
+		&copy; Untitled. Design: <br> 
+		&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://html5up.net">HTML5 UP</a>.<br><br>
+		&copy; Torne-se um programador. Desafio 21 dias Rails Avançado: <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.torneseumprogramador.com.br/cursos/ruby_avancado">Acessar</a>.
+	</div>
+
+	<!-- Scripts -->
+    <!--script src="/assets/js/jquery.min.js"></script-->
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <!-- script src="/assets/js/main.js"></script -->
+
+    <script src="/js/acoes.js"> </script>
+    <script> verificarCarregamento(); </script>
+
+    <script src="/js/jquery-desafio/init.js"> </script>
+    <script> //carregarFuncoesJquery(); </script>
+	
+	</body>
 </html>

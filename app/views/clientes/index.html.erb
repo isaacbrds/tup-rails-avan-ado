@@ -1,14 +1,35 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Clientes</h1>
-
-<div id="clientes">
-  <% @clientes.each do |cliente| %>
-    <%= render cliente %>
-    <p>
-      <%= link_to "Show this cliente", cliente %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New cliente", new_cliente_path %>
+<section class="panel banner right">
+	<div class="content color0 span-3-75">
+    <a href="/">Voltar para home</a><br>
+    <h1>Clientes</h1>
+    <hr style="margin: 0px;">
+    <table>
+      <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Endereço</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @clientes.each do |cliente| %>
+              <tr>
+                <td><%= cliente.id %></td>
+                <td><%= cliente.nome %></td>
+                <td><%= cliente.telefone %></td>
+                <td><%= cliente.endereco %></td>
+                <td>
+                  <%= link_to "Mostrar", cliente_path(cliente) %>
+                </td>
+              </tr>
+            <% end %>
+      </tbody>
+    </table>
+      <%= link_to "New cliente", new_cliente_path %>
+    </div>
+	<div class="image filtered span-1-75" data-position="25% 25%">
+    <img src="/images/pic01.jpg" alt="" />
+  </div>
+</section>

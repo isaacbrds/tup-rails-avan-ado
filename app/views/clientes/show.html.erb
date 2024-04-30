@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<section class="panel banner right">
+	<div class="content color0 span-3-75">
+    <a href="/">Voltar para home</a><br>
 
-<%= render @cliente %>
+    <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this cliente", edit_cliente_path(@cliente) %> |
-  <%= link_to "Back to clientes", clientes_path %>
+    <%= render @cliente %>
 
-  <%= button_to "Destroy this cliente", @cliente, method: :delete %>
-</div>
+    <div>
+      <%= link_to "Edit this cliente", edit_cliente_path(@cliente) %> |
+      <%= link_to "Back to clientes", clientes_path %>
+
+      <%= button_to "Destroy this cliente", @cliente, method: :delete %>
+    </div>
+
+  </div>
