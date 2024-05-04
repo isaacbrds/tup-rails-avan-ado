@@ -1,0 +1,17 @@
+
+<form action="<%= url %>" method="post">
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="fornecedor[nome]" value="<%= @fornecedor.nome %>" id="nome" required>
+    </div>
+    <div>
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" name="fornecedor[cnpj]" value="<%= @fornecedor.cnpj %>" id="cnpj">
+    </div>
+    <div>
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="fornecedor[endereco]" value="<%= @fornecedor.endereco %>" id="endereco" required>
+    </div>
+    <br>
+    <button type="submit">Salvar</button>
+</form>

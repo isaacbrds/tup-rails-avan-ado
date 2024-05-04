@@ -21,13 +21,15 @@
                 <td><%= fornecedor.cnpj %></td>
                 <td><%= fornecedor.endereco %></td>
                 <td>
-                  
+                  <a href="<%= fornecedores_editar_path(fornecedor) %>" class="btn">Alterar</a>
+                  <a href="<%= fornecedores_excluir_path(fornecedor) %>" class="btn" data: {method: :delete}>Excluir</a>
+                  <%= link_to 'excluir', fornecedores_excluir_path(fornecedor), data: { confirm: 'Deseja Excluir' }, method: :delete  %>
                 </td>
               </tr>
             <% end %>
       </tbody>
     </table>
-      <%= link_to "New cliente", new_cliente_path %>
+      <%= link_to "Novo Fornecedor", fornecedores_novo_path %>
     </div>
 	<div class="image filtered span-1-75" data-position="25% 25%">
     <img src="/images/pic01.jpg" alt="" />
