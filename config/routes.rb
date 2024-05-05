@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post "fornecedores/:id/alterar", to: 'fornecedores#alterar', as: 'fornecedores_alterar'
   delete "fornecedores/:id", to: 'fornecedores#excluir', as: 'fornecedores_excluir'
   resources :clientes
-  get 'stimulus', to: 'spa#index'
+  get 'stimulus', to: 'spa#stimulus'
+  get 'jquery', to: 'spa#jquery'
+  get 'hotwire', to: 'spa#hotwire'
   root "home#index"
 end

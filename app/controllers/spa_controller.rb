@@ -1,4 +1,5 @@
 class SpaController < ApplicationController
-  def index
-  end
+  def stimulus;end
+  def jquery;end
+  def hotwire;end
 end
