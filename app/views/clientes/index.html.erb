@@ -1,7 +1,7 @@
 <section class="panel banner right">
 	<div class="content color0 span-3-75">
     <a href="/">Voltar para home</a><br>
-    <h1>Clientes</h1>
+    <h2>Clientes</h2>
     <hr style="margin: 0px;">
     <table>
       <thead>
@@ -19,7 +19,7 @@
                 <td><%= cliente.id %></td>
                 <td><%= cliente.nome %></td>
                 <td><%= cliente.telefone %></td>
-                <td><%= cliente.endereco %></td>
+                <td><%= truncate(cliente.endereco, length: 30) %></td>
                 <td>
                   <%= link_to "Mostrar", cliente_path(cliente) %>
                 </td>

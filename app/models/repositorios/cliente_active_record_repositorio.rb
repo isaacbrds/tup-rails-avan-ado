@@ -17,7 +17,7 @@ module Repositorios
       def listar_todos( pagina = 1 )
         pagina = pagina.to_i 
         pagina = 1 if pagina < 1
-        quantidade_por_pagina = 4
+        quantidade_por_pagina = 3
         offset = (pagina - 1) * quantidade_por_pagina
         @clientes = Cliente.order(id: :desc).limit(quantidade_por_pagina).offset(offset)
       end
