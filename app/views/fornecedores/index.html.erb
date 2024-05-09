@@ -22,8 +22,7 @@
                 <td><%= fornecedor.endereco %></td>
                 <td>
                   <a href="<%= fornecedores_editar_path(fornecedor) %>" class="btn">Alterar</a>
-                  <a href="<%= fornecedores_excluir_path(fornecedor) %>" class="btn" data: {method: :delete}>Excluir</a>
-                  <%= link_to 'excluir', fornecedores_excluir_path(fornecedor), data: { confirm: 'Deseja Excluir' }, method: :delete  %>
+                  <a href="<%= fornecedores_excluir_path(fornecedor) %>" class="btn">Excluir</a>
                 </td>
               </tr>
             <% end %>

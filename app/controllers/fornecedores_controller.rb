@@ -1,4 +1,4 @@
-class FornecedoresController < ApplicationController
+class FornecedoresController < ApplicationLoginController
   before_action :carregar_fornecedor, only: %i[editar mostrar alterar excluir]
   skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
   def index
@@ -16,13 +16,15 @@ class FornecedoresController < ApplicationController
   end
 
   def alterar
-    debugger
-    if @fornecedor.update(parametros_de_fornecedor)
-      flash[:notice] = "Cadastro atualizado com sucesso!"
-      redirect_to fornecedores_path
-    else
-      flash[:alert] = "Fornecedor não realizado!"
-      redirect_to fornecedores_editar_path(@fornecedor)
+    
+    respond_to do |format|
+      if @fornecedor.update(parametros_de_fornecedor)
+        format.html { redirect_to fornecedores_url(@fornecedor), notice: "fornecedor was successfully created." }
+        format.json { render :mostrar, status: :created, location: @fornecedor }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @fornecedor.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -40,8 +42,8 @@ class FornecedoresController < ApplicationController
 
     respond_to do |format|
       if @fornecedor.save
-        format.html { redirect_to fornecedor_url(@fornecedor), notice: "fornecedor was successfully created." }
-        format.json { render :show, status: :created, location: @fornecedor }
+        format.html { redirect_to fornecedores_url(@fornecedor), notice: "fornecedor was successfully created." }
+        format.json { render :mostrar, status: :created, location: @fornecedor }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @fornecedor.errors, status: :unprocessable_entity }
@@ -50,9 +52,12 @@ class FornecedoresController < ApplicationController
   end
 
   def excluir
-    @fornecedor.destroy
-    flash[:notice] = "Exclusão realizado com sucesso!"
-    redirect_to fornecedores_path
+    @fornecedor.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to fornecedors_url, notice: "fornecedor was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private

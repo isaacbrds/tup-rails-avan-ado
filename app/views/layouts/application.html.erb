@@ -20,6 +20,9 @@
     <div id="page-wrapper">
      	<!-- Wrapper -->
         <div id="wrapper">
+		  <% if current_user %>
+		  	<a href="<%= destroy_user_session_path %>" rel="nofollow" class="sair" data-method="delete">Sair</a> 
+		  <% end %>
 		  <% if notice.present? %>
 				<p class="notice"><%= notice %></p>
 			<% end %>

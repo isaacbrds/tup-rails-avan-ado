@@ -38,6 +38,7 @@
     display: block;
     text-align: right;
     padding: 10px;
+    animation: desaparecer 5s forwards; /* 5 segundos de duração */
    }
   
   
@@ -52,6 +53,7 @@
     display: block;
     text-align: right;
     padding: 10px;
+    animation: desaparecer 5s forwards; /* 5 segundos de duração */
    }
 
    .alert{
@@ -65,6 +67,29 @@
     display: block;
     text-align: right;
     padding: 10px;
+    animation: desaparecer 5s forwards; /* 5 segundos de duração */
    }
   
+  .sair{
+    border-radius: 10px;
+    color: #6ffb6f;
+    position: absolute;
+    z-index: 9999;
+    top: 2%;
+    right: 1%;
+    background: #00000078;
+    display: block;
+    text-align: right;
+    padding: 5px 10px 5px 10px;
+   }
   
+
+@keyframes desaparecer {
+  0% {
+    opacity: 1; /* Inicialmente totalmente visível */
+  }
+  100% {
+    opacity: 0; /* Após a animação, completamente transparente */
+    display: none; /* O elemento não é mais renderizado após a animação */
+  }
+}

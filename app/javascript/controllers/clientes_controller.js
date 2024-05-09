@@ -6,6 +6,7 @@ import { Cliente } from "../models/cliente.js";
 
 export default class extends Controller {
   connect() {
+    this.cliente = new Cliente();
     this.paginaCorrente = 1;
     this.loadClientes();
   }
