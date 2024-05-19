@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   devise_for :useres
   resources :pedido_produtos
@@ -11,8 +12,12 @@ Rails.application.routes.draw do
   post "fornecedores/:id/alterar", to: 'fornecedores#alterar', as: 'fornecedores_alterar'
   delete "fornecedores/:id", to: 'fornecedores#excluir', as: 'fornecedores_excluir'
   resources :clientes
+  get 'csv', to: 'csv#index'
+  post 'upload', to: 'csv#upload'
   get 'stimulus', to: 'spa#stimulus'
   get 'jquery', to: 'spa#jquery'
   get 'hotwire', to: 'spa#hotwire'
   root "home#index"
+
+  mount Sidekiq::Web => '/sidekiq'
 end
