@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post "fornecedores/:id/alterar", to: 'fornecedores#alterar', as: 'fornecedores_alterar'
   delete "fornecedores/:id", to: 'fornecedores#excluir', as: 'fornecedores_excluir'
   resources :clientes
+  resources :alunos
   get 'csv', to: 'csv#index'
   post 'upload', to: 'csv#upload'
   get 'stimulus', to: 'spa#stimulus'

@@ -1,0 +1,6 @@
+development:
+  clients:
+    default:
+      database: desafio_rails
+      hosts:
+        - localhost:27017
